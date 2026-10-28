@@ -1,0 +1,550 @@
+{
+  "id": "com.nuvio.platform.hubs.curated",
+  "version": "3.0.0",
+  "name": "Platform Hubs — Curated Rows",
+  "description": "48 platform-specific TMDB discovery rows for Xperience — no generic genre bleed. Region-aware streaming availability.",
+  "resources": [
+    "catalog"
+  ],
+  "types": [
+    "movie",
+    "series"
+  ],
+  "idPrefixes": [
+    "tmdb:"
+  ],
+  "catalogs": [
+    {
+      "type": "series",
+      "id": "hub_netflix_01",
+      "name": "Netflix • Crime & Mystery Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_netflix_02",
+      "name": "Netflix • Korean Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_netflix_03",
+      "name": "Netflix • Documentary Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_netflix_04",
+      "name": "Netflix • Comedy Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_netflix_05",
+      "name": "Netflix • Thriller Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_netflix_06",
+      "name": "Netflix • Animation Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_apple_01",
+      "name": "Apple TV+ • Sci-Fi Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_apple_02",
+      "name": "Apple TV+ • Prestige Dramas",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_apple_03",
+      "name": "Apple TV+ • Mystery Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_apple_04",
+      "name": "Apple TV+ • Documentary Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_apple_05",
+      "name": "Apple TV+ • Thriller Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_apple_06",
+      "name": "Apple TV+ • Comedy Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_prime_01",
+      "name": "Prime Video • Action Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_prime_02",
+      "name": "Prime Video • Crime Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_prime_03",
+      "name": "Prime Video • Sci-Fi Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_prime_04",
+      "name": "Prime Video • Thriller Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_prime_05",
+      "name": "Prime Video • Comedy Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_prime_06",
+      "name": "Prime Video • Documentary Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_hbo_01",
+      "name": "HBO Max • Prestige Dramas",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_hbo_02",
+      "name": "HBO Max • Crime Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_hbo_03",
+      "name": "HBO Max • Mystery Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_hbo_04",
+      "name": "HBO Max • Sci-Fi & Fantasy",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_hbo_05",
+      "name": "HBO Max • Top-Rated Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_hbo_06",
+      "name": "HBO Max • Documentary Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_hulu_01",
+      "name": "Hulu • Comedy Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_hulu_02",
+      "name": "Hulu • Crime Dramas",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_hulu_03",
+      "name": "Hulu • Mystery Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_hulu_04",
+      "name": "Hulu • Drama Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_hulu_05",
+      "name": "Hulu • Documentary Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_hulu_06",
+      "name": "Hulu • Thriller Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_disney_01",
+      "name": "Disney+ • Action & Adventure Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_disney_02",
+      "name": "Disney+ • Animation Classics",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_disney_03",
+      "name": "Disney+ • Family Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_disney_04",
+      "name": "Disney+ • Sci-Fi & Fantasy Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_disney_05",
+      "name": "Disney+ • Adventure Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_disney_06",
+      "name": "Disney+ • Documentary Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_britbox_01",
+      "name": "BritBox • British Crime",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_britbox_02",
+      "name": "BritBox • British Mysteries",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_britbox_03",
+      "name": "BritBox • British Drama",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_britbox_04",
+      "name": "BritBox • British Comedy",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_britbox_05",
+      "name": "BritBox • Top-Rated British Dramas",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_britbox_06",
+      "name": "BritBox • Drama Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_paramount_01",
+      "name": "Paramount+ • Crime Dramas",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_paramount_02",
+      "name": "Paramount+ • Action Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_paramount_03",
+      "name": "Paramount+ • Sci-Fi Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "series",
+      "id": "hub_paramount_04",
+      "name": "Paramount+ • Comedy Series",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_paramount_05",
+      "name": "Paramount+ • Family Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    },
+    {
+      "type": "movie",
+      "id": "hub_paramount_06",
+      "name": "Paramount+ • Thriller Films",
+      "extra": [
+        {
+          "name": "skip",
+          "isRequired": false
+        }
+      ]
+    }
+  ],
+  "behaviorHints": {
+    "configurable": false,
+    "configurationRequired": false
+  }
+}
