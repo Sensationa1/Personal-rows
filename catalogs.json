@@ -1,394 +1,8 @@
 {
-  "id": "com.nuvio.platform.hubs.curated",
-  "version": "3.0.0",
-  "name": "Platform Hubs — Curated Rows",
-  "description": "48 platform-specific TMDB discovery rows for Xperience — no generic genre bleed. Region-aware streaming availability.",
-  "rows": [
-    {
-      "id": "hub_netflix_01",
-      "service": "Netflix",
-      "name": "Netflix • Crime & Mystery Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "80|9648"
-    },
-    {
-      "id": "hub_netflix_02",
-      "service": "Netflix",
-      "name": "Netflix • Korean Series",
-      "type": "series",
-      "filter": "language",
-      "value": "ko"
-    },
-    {
-      "id": "hub_netflix_03",
-      "service": "Netflix",
-      "name": "Netflix • Documentary Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "99"
-    },
-    {
-      "id": "hub_netflix_04",
-      "service": "Netflix",
-      "name": "Netflix • Comedy Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "35"
-    },
-    {
-      "id": "hub_netflix_05",
-      "service": "Netflix",
-      "name": "Netflix • Thriller Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "53"
-    },
-    {
-      "id": "hub_netflix_06",
-      "service": "Netflix",
-      "name": "Netflix • Animation Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "16"
-    },
-    {
-      "id": "hub_apple_01",
-      "service": "Apple TV+",
-      "name": "Apple TV+ • Sci-Fi Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "10765"
-    },
-    {
-      "id": "hub_apple_02",
-      "service": "Apple TV+",
-      "name": "Apple TV+ • Prestige Dramas",
-      "type": "series",
-      "filter": "genre",
-      "value": "18"
-    },
-    {
-      "id": "hub_apple_03",
-      "service": "Apple TV+",
-      "name": "Apple TV+ • Mystery Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "9648"
-    },
-    {
-      "id": "hub_apple_04",
-      "service": "Apple TV+",
-      "name": "Apple TV+ • Documentary Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "99"
-    },
-    {
-      "id": "hub_apple_05",
-      "service": "Apple TV+",
-      "name": "Apple TV+ • Thriller Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "53"
-    },
-    {
-      "id": "hub_apple_06",
-      "service": "Apple TV+",
-      "name": "Apple TV+ • Comedy Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "35"
-    },
-    {
-      "id": "hub_prime_01",
-      "service": "Prime Video",
-      "name": "Prime Video • Action Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "28"
-    },
-    {
-      "id": "hub_prime_02",
-      "service": "Prime Video",
-      "name": "Prime Video • Crime Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "80"
-    },
-    {
-      "id": "hub_prime_03",
-      "service": "Prime Video",
-      "name": "Prime Video • Sci-Fi Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "10765"
-    },
-    {
-      "id": "hub_prime_04",
-      "service": "Prime Video",
-      "name": "Prime Video • Thriller Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "53"
-    },
-    {
-      "id": "hub_prime_05",
-      "service": "Prime Video",
-      "name": "Prime Video • Comedy Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "35"
-    },
-    {
-      "id": "hub_prime_06",
-      "service": "Prime Video",
-      "name": "Prime Video • Documentary Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "99"
-    },
-    {
-      "id": "hub_hbo_01",
-      "service": "HBO Max",
-      "name": "HBO Max • Prestige Dramas",
-      "type": "series",
-      "filter": "genre",
-      "value": "18"
-    },
-    {
-      "id": "hub_hbo_02",
-      "service": "HBO Max",
-      "name": "HBO Max • Crime Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "80"
-    },
-    {
-      "id": "hub_hbo_03",
-      "service": "HBO Max",
-      "name": "HBO Max • Mystery Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "9648"
-    },
-    {
-      "id": "hub_hbo_04",
-      "service": "HBO Max",
-      "name": "HBO Max • Sci-Fi & Fantasy",
-      "type": "series",
-      "filter": "genre",
-      "value": "10765"
-    },
-    {
-      "id": "hub_hbo_05",
-      "service": "HBO Max",
-      "name": "HBO Max • Top-Rated Films",
-      "type": "movie",
-      "filter": "toprated",
-      "value": ""
-    },
-    {
-      "id": "hub_hbo_06",
-      "service": "HBO Max",
-      "name": "HBO Max • Documentary Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "99"
-    },
-    {
-      "id": "hub_hulu_01",
-      "service": "Hulu",
-      "name": "Hulu • Comedy Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "35"
-    },
-    {
-      "id": "hub_hulu_02",
-      "service": "Hulu",
-      "name": "Hulu • Crime Dramas",
-      "type": "series",
-      "filter": "genre",
-      "value": "80"
-    },
-    {
-      "id": "hub_hulu_03",
-      "service": "Hulu",
-      "name": "Hulu • Mystery Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "9648"
-    },
-    {
-      "id": "hub_hulu_04",
-      "service": "Hulu",
-      "name": "Hulu • Drama Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "18"
-    },
-    {
-      "id": "hub_hulu_05",
-      "service": "Hulu",
-      "name": "Hulu • Documentary Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "99"
-    },
-    {
-      "id": "hub_hulu_06",
-      "service": "Hulu",
-      "name": "Hulu • Thriller Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "53"
-    },
-    {
-      "id": "hub_disney_01",
-      "service": "Disney+",
-      "name": "Disney+ • Action & Adventure Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "28"
-    },
-    {
-      "id": "hub_disney_02",
-      "service": "Disney+",
-      "name": "Disney+ • Animation Classics",
-      "type": "movie",
-      "filter": "genre",
-      "value": "16"
-    },
-    {
-      "id": "hub_disney_03",
-      "service": "Disney+",
-      "name": "Disney+ • Family Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "10751"
-    },
-    {
-      "id": "hub_disney_04",
-      "service": "Disney+",
-      "name": "Disney+ • Sci-Fi & Fantasy Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "10765"
-    },
-    {
-      "id": "hub_disney_05",
-      "service": "Disney+",
-      "name": "Disney+ • Adventure Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "12"
-    },
-    {
-      "id": "hub_disney_06",
-      "service": "Disney+",
-      "name": "Disney+ • Documentary Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "99"
-    },
-    {
-      "id": "hub_britbox_01",
-      "service": "BritBox",
-      "name": "BritBox • British Crime",
-      "type": "series",
-      "filter": "genre",
-      "value": "80"
-    },
-    {
-      "id": "hub_britbox_02",
-      "service": "BritBox",
-      "name": "BritBox • British Mysteries",
-      "type": "series",
-      "filter": "genre",
-      "value": "9648"
-    },
-    {
-      "id": "hub_britbox_03",
-      "service": "BritBox",
-      "name": "BritBox • British Drama",
-      "type": "series",
-      "filter": "genre",
-      "value": "18"
-    },
-    {
-      "id": "hub_britbox_04",
-      "service": "BritBox",
-      "name": "BritBox • British Comedy",
-      "type": "series",
-      "filter": "genre",
-      "value": "35"
-    },
-    {
-      "id": "hub_britbox_05",
-      "service": "BritBox",
-      "name": "BritBox • Top-Rated British Dramas",
-      "type": "series",
-      "filter": "toprated_genre",
-      "value": "18"
-    },
-    {
-      "id": "hub_britbox_06",
-      "service": "BritBox",
-      "name": "BritBox • Drama Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "18"
-    },
-    {
-      "id": "hub_paramount_01",
-      "service": "Paramount+",
-      "name": "Paramount+ • Crime Dramas",
-      "type": "series",
-      "filter": "genre",
-      "value": "80"
-    },
-    {
-      "id": "hub_paramount_02",
-      "service": "Paramount+",
-      "name": "Paramount+ • Action Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "28"
-    },
-    {
-      "id": "hub_paramount_03",
-      "service": "Paramount+",
-      "name": "Paramount+ • Sci-Fi Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "10765"
-    },
-    {
-      "id": "hub_paramount_04",
-      "service": "Paramount+",
-      "name": "Paramount+ • Comedy Series",
-      "type": "series",
-      "filter": "genre",
-      "value": "35"
-    },
-    {
-      "id": "hub_paramount_05",
-      "service": "Paramount+",
-      "name": "Paramount+ • Family Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "10751"
-    },
-    {
-      "id": "hub_paramount_06",
-      "service": "Paramount+",
-      "name": "Paramount+ • Thriller Films",
-      "type": "movie",
-      "filter": "genre",
-      "value": "53"
-    }
-  ],
+  "id": "com.nuvio.platform.hubs.editorial",
+  "version": "4.0.0",
+  "name": "Streaming Platform Home Rows",
+  "description": "Platform-authentic English row names. Discovery content is TMDB approximations, not proprietary platform feeds.",
   "services": {
     "Netflix": {
       "region": "FI",
@@ -403,8 +17,7 @@
       "region": "FI",
       "providerPatterns": [
         "^Apple TV Plus$",
-        "^Apple TV\\+$",
-        "^Apple TV$"
+        "^Apple TV\\+$"
       ],
       "fallback": [
         350
@@ -471,5 +84,530 @@
         2616
       ]
     }
-  }
+  },
+  "serviceSlugs": {
+    "Netflix": "netflix",
+    "Apple TV+": "apple-tv",
+    "Prime Video": "prime-video",
+    "HBO Max": "hbo-max",
+    "Hulu": "hulu",
+    "Disney+": "disney-plus",
+    "BritBox": "britbox",
+    "Paramount+": "paramount-plus"
+  },
+  "rows": [
+    {
+      "id": "hub_netflix_01",
+      "service": "Netflix",
+      "name": "Trending Now",
+      "type": "series",
+      "filter": "trending",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_netflix_02",
+      "service": "Netflix",
+      "name": "Only on Netflix",
+      "type": "series",
+      "filter": "network",
+      "value": "213",
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_netflix_03",
+      "service": "Netflix",
+      "name": "Popular on Netflix",
+      "type": "movie",
+      "filter": "popular",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_netflix_04",
+      "service": "Netflix",
+      "name": "New Releases",
+      "type": "movie",
+      "filter": "new",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_netflix_05",
+      "service": "Netflix",
+      "name": "Popular TV Shows",
+      "type": "series",
+      "filter": "popular",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_netflix_06",
+      "service": "Netflix",
+      "name": "Critically Acclaimed TV Shows",
+      "type": "series",
+      "filter": "toprated",
+      "value": null,
+      "sourceStatus": "editorial"
+    },
+    {
+      "id": "hub_netflix_07",
+      "service": "Netflix",
+      "name": "International TV Shows",
+      "type": "series",
+      "filter": "international",
+      "value": null,
+      "sourceStatus": "verified-category"
+    },
+    {
+      "id": "hub_apple_tv_01",
+      "service": "Apple TV+",
+      "name": "New Releases",
+      "type": "series",
+      "filter": "new",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_apple_tv_02",
+      "service": "Apple TV+",
+      "name": "Browse All Apple Originals",
+      "type": "series",
+      "filter": "network",
+      "value": "2552",
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_apple_tv_03",
+      "service": "Apple TV+",
+      "name": "Great Movies Now on Apple TV",
+      "type": "movie",
+      "filter": "popular",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_apple_tv_04",
+      "service": "Apple TV+",
+      "name": "Top 10 TV Shows",
+      "type": "series",
+      "filter": "topten",
+      "value": null,
+      "sourceStatus": "verified-name-proxy-ranking"
+    },
+    {
+      "id": "hub_apple_tv_05",
+      "service": "Apple TV+",
+      "name": "Top 10 Movies",
+      "type": "movie",
+      "filter": "topten",
+      "value": null,
+      "sourceStatus": "verified-name-proxy-ranking"
+    },
+    {
+      "id": "hub_apple_tv_06",
+      "service": "Apple TV+",
+      "name": "Popular Series",
+      "type": "series",
+      "filter": "popular",
+      "value": null,
+      "sourceStatus": "editorial"
+    },
+    {
+      "id": "hub_apple_tv_07",
+      "service": "Apple TV+",
+      "name": "Critically Acclaimed",
+      "type": "series",
+      "filter": "toprated",
+      "value": null,
+      "sourceStatus": "editorial"
+    },
+    {
+      "id": "hub_prime_video_01",
+      "service": "Prime Video",
+      "name": "Popular TV",
+      "type": "series",
+      "filter": "popular",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_prime_video_02",
+      "service": "Prime Video",
+      "name": "Featured Originals and Exclusives",
+      "type": "series",
+      "filter": "network",
+      "value": "1024",
+      "sourceStatus": "verified-name-proxy-originals"
+    },
+    {
+      "id": "hub_prime_video_03",
+      "service": "Prime Video",
+      "name": "Explore: Latest TV",
+      "type": "series",
+      "filter": "new",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_prime_video_04",
+      "service": "Prime Video",
+      "name": "Drama TV",
+      "type": "series",
+      "filter": "genre",
+      "value": "18",
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_prime_video_05",
+      "service": "Prime Video",
+      "name": "Popular with subscriptions",
+      "type": "movie",
+      "filter": "popular",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_prime_video_06",
+      "service": "Prime Video",
+      "name": "Comedy TV",
+      "type": "series",
+      "filter": "genre",
+      "value": "35",
+      "sourceStatus": "editorial"
+    },
+    {
+      "id": "hub_prime_video_07",
+      "service": "Prime Video",
+      "name": "Action & Adventure",
+      "type": "movie",
+      "filter": "genre",
+      "value": "28|12",
+      "sourceStatus": "verified-category"
+    },
+    {
+      "id": "hub_hbo_max_01",
+      "service": "HBO Max",
+      "name": "Trending Now",
+      "type": "series",
+      "filter": "trending",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_hbo_max_02",
+      "service": "HBO Max",
+      "name": "HBO Originals",
+      "type": "series",
+      "filter": "network",
+      "value": "49",
+      "sourceStatus": "verified-category"
+    },
+    {
+      "id": "hub_hbo_max_03",
+      "service": "HBO Max",
+      "name": "Max Originals",
+      "type": "series",
+      "filter": "network",
+      "value": "3186",
+      "sourceStatus": "verified-category"
+    },
+    {
+      "id": "hub_hbo_max_04",
+      "service": "HBO Max",
+      "name": "Just Added",
+      "type": "movie",
+      "filter": "new",
+      "value": null,
+      "sourceStatus": "verified-name-proxy-added"
+    },
+    {
+      "id": "hub_hbo_max_05",
+      "service": "HBO Max",
+      "name": "Awards & Acclaim",
+      "type": "series",
+      "filter": "toprated",
+      "value": null,
+      "sourceStatus": "verified-name-proxy-awards"
+    },
+    {
+      "id": "hub_hbo_max_06",
+      "service": "HBO Max",
+      "name": "Become an Armchair Detective",
+      "type": "series",
+      "filter": "genre",
+      "value": "80|9648",
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_hbo_max_07",
+      "service": "HBO Max",
+      "name": "Drama! Drama! Drama!",
+      "type": "series",
+      "filter": "genre",
+      "value": "18",
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_hulu_01",
+      "service": "Hulu",
+      "name": "Trending",
+      "type": "series",
+      "filter": "trending",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_hulu_02",
+      "service": "Hulu",
+      "name": "Newly Added TV",
+      "type": "series",
+      "filter": "new",
+      "value": null,
+      "sourceStatus": "verified-name-proxy-added"
+    },
+    {
+      "id": "hub_hulu_03",
+      "service": "Hulu",
+      "name": "Newly Added Hulu Originals",
+      "type": "series",
+      "filter": "networknew",
+      "value": "453",
+      "sourceStatus": "verified-name-proxy-originals-added"
+    },
+    {
+      "id": "hub_hulu_04",
+      "service": "Hulu",
+      "name": "Hulu Originals",
+      "type": "series",
+      "filter": "network",
+      "value": "453",
+      "sourceStatus": "verified-category"
+    },
+    {
+      "id": "hub_hulu_05",
+      "service": "Hulu",
+      "name": "Popular on Hulu",
+      "type": "series",
+      "filter": "popular",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_hulu_06",
+      "service": "Hulu",
+      "name": "Newly Added Movies",
+      "type": "movie",
+      "filter": "new",
+      "value": null,
+      "sourceStatus": "editorial-proxy-added"
+    },
+    {
+      "id": "hub_hulu_07",
+      "service": "Hulu",
+      "name": "Documentaries",
+      "type": "movie",
+      "filter": "genre",
+      "value": "99",
+      "sourceStatus": "verified-category"
+    },
+    {
+      "id": "hub_disney_plus_01",
+      "service": "Disney+",
+      "name": "Trending",
+      "type": "series",
+      "filter": "trending",
+      "value": null,
+      "sourceStatus": "verified-name"
+    },
+    {
+      "id": "hub_disney_plus_02",
+      "service": "Disney+",
+      "name": "New to Disney+",
+      "type": "movie",
+      "filter": "new",
+      "value": null,
+      "sourceStatus": "verified-name-proxy-added"
+    },
+    {
+      "id": "hub_disney_plus_03",
+      "service": "Disney+",
+      "name": "Disney+ Originals",
+      "type": "series",
+      "filter": "network",
+      "value": "2739",
+      "sourceStatus": "verified-category"
+    },
+    {
+      "id": "hub_disney_plus_04",
+      "service": "Disney+",
+      "name": "Disney",
+      "type": "movie",
+      "filter": "studio",
+      "value": "2",
+      "sourceStatus": "verified-brand"
+    },
+    {
+      "id": "hub_disney_plus_05",
+      "service": "Disney+",
+      "name": "Pixar",
+      "type": "movie",
+      "filter": "studio",
+      "value": "3",
+      "sourceStatus": "verified-brand"
+    },
+    {
+      "id": "hub_disney_plus_06",
+      "service": "Disney+",
+      "name": "Marvel",
+      "type": "movie",
+      "filter": "studio",
+      "value": "420",
+      "sourceStatus": "verified-brand"
+    },
+    {
+      "id": "hub_disney_plus_07",
+      "service": "Disney+",
+      "name": "Star Wars",
+      "type": "movie",
+      "filter": "studio",
+      "value": "1",
+      "sourceStatus": "verified-brand"
+    },
+    {
+      "id": "hub_disney_plus_08",
+      "service": "Disney+",
+      "name": "National Geographic",
+      "type": "series",
+      "filter": "network",
+      "value": "43",
+      "sourceStatus": "verified-brand"
+    },
+    {
+      "id": "hub_britbox_01",
+      "service": "BritBox",
+      "name": "Recently Added",
+      "type": "series",
+      "filter": "new",
+      "value": null,
+      "sourceStatus": "verified-name-proxy-added"
+    },
+    {
+      "id": "hub_britbox_02",
+      "service": "BritBox",
+      "name": "Most Recommended",
+      "type": "series",
+      "filter": "toprated",
+      "value": null,
+      "sourceStatus": "verified-name-proxy-recs"
+    },
+    {
+      "id": "hub_britbox_03",
+      "service": "BritBox",
+      "name": "Best of ITV",
+      "type": "series",
+      "filter": "network",
+      "value": "9",
+      "sourceStatus": "verified-name-proxy-licensing"
+    },
+    {
+      "id": "hub_britbox_04",
+      "service": "BritBox",
+      "name": "Drama",
+      "type": "series",
+      "filter": "genre",
+      "value": "18",
+      "sourceStatus": "verified-category"
+    },
+    {
+      "id": "hub_britbox_05",
+      "service": "BritBox",
+      "name": "Comedy",
+      "type": "series",
+      "filter": "genre",
+      "value": "35",
+      "sourceStatus": "verified-category"
+    },
+    {
+      "id": "hub_britbox_06",
+      "service": "BritBox",
+      "name": "True Stories",
+      "type": "series",
+      "filter": "genre",
+      "value": "99",
+      "sourceStatus": "verified-category"
+    },
+    {
+      "id": "hub_britbox_07",
+      "service": "BritBox",
+      "name": "Most Popular",
+      "type": "series",
+      "filter": "popular",
+      "value": null,
+      "sourceStatus": "editorial"
+    },
+    {
+      "id": "hub_paramount_plus_01",
+      "service": "Paramount+",
+      "name": "Trending Now",
+      "type": "series",
+      "filter": "trending",
+      "value": null,
+      "sourceStatus": "reported-name"
+    },
+    {
+      "id": "hub_paramount_plus_02",
+      "service": "Paramount+",
+      "name": "Paramount+ Originals",
+      "type": "series",
+      "filter": "network",
+      "value": "4330",
+      "sourceStatus": "verified-brand"
+    },
+    {
+      "id": "hub_paramount_plus_03",
+      "service": "Paramount+",
+      "name": "Hit Movies",
+      "type": "movie",
+      "filter": "popular",
+      "value": null,
+      "sourceStatus": "reported-name"
+    },
+    {
+      "id": "hub_paramount_plus_04",
+      "service": "Paramount+",
+      "name": "SHOWTIME",
+      "type": "series",
+      "filter": "network",
+      "value": "67",
+      "sourceStatus": "verified-brand"
+    },
+    {
+      "id": "hub_paramount_plus_05",
+      "service": "Paramount+",
+      "name": "Nickelodeon",
+      "type": "series",
+      "filter": "network",
+      "value": "13",
+      "sourceStatus": "verified-brand"
+    },
+    {
+      "id": "hub_paramount_plus_06",
+      "service": "Paramount+",
+      "name": "Comedy Central",
+      "type": "series",
+      "filter": "network",
+      "value": "47",
+      "sourceStatus": "verified-brand"
+    },
+    {
+      "id": "hub_paramount_plus_07",
+      "service": "Paramount+",
+      "name": "Popular Shows",
+      "type": "series",
+      "filter": "popular",
+      "value": null,
+      "sourceStatus": "editorial"
+    }
+  ]
 }

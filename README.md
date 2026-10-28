@@ -1,45 +1,75 @@
-# Xperience Streaming Platform Rows — v3
+# Xperience Platform Homes v4 — Real platform-style English row names
 
-## What was wrong with the last v2 pack?
+This is the revised version of the previous generic-genre package. It **removes the `Netflix • Action` style prefix**, preserves the artwork already in the Enzo collection, and creates **57 English-labelled catalog rows** based on observed streaming-app headings and hubs.
 
-The previous *expanded* combined collection used unrelated Xperience catalogs like `genre_scifi_series` and `world_ko_popular_series` inside branded folders. Those lists were **not restricted to Netflix, Disney+, etc.**, so the folder displayed generic titles and generic source names. It did not include a separately importable Home rows pack.
+## What is included
 
-This package fixes that misunderstanding by keeping **service-specific original rows only** in the reliable collection, and by supplying **48 genuinely service-filtered, custom TMDB rows** as a separate Stremio-compatible catalog add-on.
+- `tmdb_addon/`: One independent Vercel add-on exposing **eight separate service manifests** plus an optional master manifest.
+- `collections/01_combined_original_artwork_safe.collection.json`: Existing 8-tile collection, with original artwork and existing sources. Safe starting point; does **not** automatically add the new catalogs.
+- `collections/02_combined_with_57_rows_EXPERIMENTAL.collection.json`: Eight branded folders + all 57 new source references, using separate service manifest addon IDs. **May require relinking** after Xperience import.
+- `collections/03_combined_master_manifest_EXPERIMENTAL.collection.json`: Alternative for importing the combined `/manifest.json` rather than eight separate manifests. **May require relinking**.
+- `mapping/catalog_to_folder.csv`: source IDs, folder names, English row titles, approximation type.
 
-## Included files
+**Deploy `tmdb_addon/` as its own Vercel project**; don't overwrite your working Top 10 project. Set environment variable `TMDB_API_KEY` in Vercel Production settings and redeploy. All row names are inside `catalogs.json`, without `•` separators or duplicated service prefix.
 
-- `tmdb_addon/`: New, independent, Vercel-ready Stremio catalog add-on with **48 distinct TMDB discovery catalogs** (6 per service). No external npm dependencies. This does **not** modify your working Top 10 Vercel add-on. Requires `TMDB_API_KEY` on Vercel.
-- `collections/01_import_first_service_only.collection.json`: **Reliable collection** using the same eight original Xperience service folders, unchanged artwork and their original service-specific source IDs, **without** the generic Sci-Fi/genre/region catalog bleed.
-- `collections/02_experimental_combined_with_curated_rows.collection.json`: All eight service tiles with the 48 new source IDs appended. **Important: Xperience might rehost imported addon rows and assign different IDs. If so, the custom sources in this JSON WILL NOT resolve and must be relinked in Step 3.** Test on a duplicate profile. This is a source-mapping *template*, not a guaranteed one-click import.
-- `collections/03_all_14_services_original_artwork.collection.json`: Original 14 streaming service tiles unchanged (includes the six services not part of this project).
-- `mapping/catalog_to_folder.csv`: Exactly which custom rows belong to which folders, for linking after Step 2.
-- `mapping/catalog_to_folder.json`: Machine-readable mapping.
+## Manifest links after deployment
 
-## Setup: correct order
+Substitute your **actual** Vercel deployment domain for `YOUR-DEPLOYMENT.vercel.app`:
 
-1. **Deploy `tmdb_addon/` as a NEW Vercel project**. Do not upload it over your existing Top 10 add-on. Set environment variable `TMDB_API_KEY` to your own TMDB v3 API key **or** long v4 read-access token. Deploy and open `https://YOUR-NEW-PROJECT.vercel.app/manifest.json`; it must list 48 catalogs. Do not paste the key into the public URL or source file.
-2. In **Xperience → your profile → Step 2: Home rows → Import from another add-on**, paste **that hosted `manifest.json` URL**. All 48 rows can then be configured like other imported add-on rows. You can mark the imported rows **Hidden** so they don't clutter the main Home while remaining available as collection sources. Xperience's plan/row limits still apply.
-3. In **Step 3: Collections → Import**, first use `01_import_first_service_only.collection.json`. This restores your branded combined eight-service folder and works with the original Xperience-specific catalog IDs. Verify artwork/tiles/content.
-4. In **Step 3**, open each service folder and **add its six imported rows** using the exact titles in `mapping/catalog_to_folder.csv`. This creates the desired expanded catalog tabs/rows (depending on the selected Nuvio collection layout). Once imported into Xperience, catalog IDs **may be rewritten**, so manual assignment via the picker is the safe procedure.
-5. Optional: test `02_experimental_combined_with_curated_rows.collection.json` on a **duplicate profile only**, after importing the addon. If it resolves, it saves the manual linking; if not, revert and use the reliable collection plus source picker. Do not blindly replace your working collection.
-6. **Step 4: Push the full Xperience add-on/config to Nuvio; push collections too; restart Nuvio**. If Xperience rehosted a catalog but Nuvio still shows generic “Movie/Series” tabs, push again before troubleshooting catalog mapping.
+| Service | Stremio manifest | Rows |
+|---|---|---:|
+| Netflix | `https://YOUR-DEPLOYMENT.vercel.app/netflix/manifest.json` | 7 |
+| Apple TV+ | `https://YOUR-DEPLOYMENT.vercel.app/apple-tv/manifest.json` | 7 |
+| Prime Video | `https://YOUR-DEPLOYMENT.vercel.app/prime-video/manifest.json` | 7 |
+| HBO Max | `https://YOUR-DEPLOYMENT.vercel.app/hbo-max/manifest.json` | 7 |
+| Hulu | `https://YOUR-DEPLOYMENT.vercel.app/hulu/manifest.json` | 7 |
+| Disney+ | `https://YOUR-DEPLOYMENT.vercel.app/disney-plus/manifest.json` | 8 |
+| BritBox | `https://YOUR-DEPLOYMENT.vercel.app/britbox/manifest.json` | 7 |
+| Paramount+ | `https://YOUR-DEPLOYMENT.vercel.app/paramount-plus/manifest.json` | 7 |
 
-## Regions and truth-in-labeling
+The optional all-at-once manifest is `/manifest.json` (57 rows, but rows like `Trending Now` can have duplicate names across services). **Eight separate manifests are recommended** so the editor can keep service rows grouped.
 
-- Netflix, Apple TV+, Prime Video, HBO Max and Disney+ rows filter to **FI** subscription watch availability, using TMDB/JustWatch data.
-- Hulu and Paramount+ rows filter to **US**, and BritBox rows filter to **GB** (because these are market-specific services and catalog sizes differ by country). These results are **not a promise of Finnish streaming availability**.
-- Genres are combined with a service provider filter. For example, Netflix `Korean Series` means Korean-language titles **on Netflix**, not all Korean shows.
-- Rows are **TMDB-based discovery**, not official, proprietary Netflix/Disney+ rankings. We deliberately do *not* call them an official “Top 10.” The original Xperience Top 10 rows remain in your folder.
-- If your locale differs, change `PLATFORM_REGION_NETFLIX`, `PLATFORM_REGION_APPLE`, `PLATFORM_REGION_HBO`, `PLATFORM_REGION_PARAMOUNT`, etc., in the deployed project's environment variables.
-- TMDB uses JustWatch provider data, which may lag real services; include JustWatch attribution where you redistribute availability information.
+## Importing into Xperience
 
-## Important scope limits
+1. Back up your existing collection and profile before any imports.
+2. Deploy the new `tmdb_addon/` project, or update the old `personal-rows` project with this v4 code (same TMDB API key). **No file in this ZIP is already hosted**.
+3. Open each service manifest URL in your browser and check its `catalogs` array. The Netflix manifest should return seven plain English titles (`Trending Now`, `Only on Netflix`, etc.) with no `•` separator.
+4. In Xperience **Step 2 → Home rows → Import from another add-on**, import one service manifest at a time. You can hide these rows from your overall Home while keeping their catalogs as collection sources.
+5. In **Step 3 → Collections**, import `01_combined_original_artwork_safe.collection.json` and link the new imported rows to their matching service folders using `mapping/catalog_to_folder.csv`. This is the **safe, reliable procedure** because Xperience can assign its own addon/catalog IDs to imported catalogs.
+6. The two experimental combined collections may save manual relinking **only if Xperience retains imported add-on IDs**; test on a duplicate profile, not your live one.
+7. Push the updated profile/add-on and collection to Nuvio and check a handful of rows before linking the rest.
 
-- Importing just a **collections JSON** does **not** magically create new custom Home rows in Step 2.
-- The source folder can show sources as separate **tabs/rows** depending on collection view; it cannot clone an entire Netflix-style app UI.
-- The add-on is source-tested with mocked TMDB responses, but it has **not been live-deployed or checked against your private Xperience profile**, so the external-row remapping needs one real import test.
-- All artwork URLs are retained from your own exported Xperience collection. No logos or font files bundled.
+## Important accuracy limits
 
-## Testing
+**English wording:** Labels come from publicly observed menus, named collections and service-specific hubs wherever available. These streaming providers personalize layouts, change headings, and differ by country/device, so this is **not** a byte-for-byte clone of any one person's live 2026 screen. Some additional category names are clearly marked `editorial` in the mapping. No arbitrary `Netflix • Sci-Fi` prefixes are used.
 
-From `tmdb_addon/`: `npm test` (uses Node 18+, no dependency install required).
+**Data:** Xperience rows are populated using **TMDB Discovery and its watch-provider availability**, not private streaming service APIs. All 57 catalogs are restricted to the respective service and configured country. These are editorial *approximations* to the actual service's content sections:
+
+- **`Top 10 TV Shows` / `Top 10 Movies` (Apple TV)** show ten titles ordered by **TMDB popularity**, **not official Apple TV rankings**. Do not interpret them as a certified Apple chart.
+- **`New Releases`, `New to Disney+`, `Just Added`, `Recently Added`, `Newly Added TV`, etc.** are based on original release dates, **not actual dates those titles joined the provider**.
+- **`Only on Netflix`, `Apple Originals`, `HBO Originals`, `Hulu Originals`, etc.** use TMDB network/company filters plus regional subscription availability. This is a **partial approximation** to real first-party original/exclusive catalogs and can omit titles or include co-productions.
+- **`Most Recommended`, `Awards & Acclaim`, `Critically Acclaimed`** use TMDB community ratings. They aren't actual platform personalization or verified awards lists.
+- **`Trending Now`** uses popular recent TMDB titles with the provider filter; it does not reproduce that service's proprietary live trending algorithm.
+- **`Continue Watching`, `My List`, `Because You Watched`, and other personal rows are not fabricated**. TMDB has no access to your provider-specific account history.
+- **Platform brand areas** (e.g. Pixar, Marvel, Star Wars, National Geographic) use film studio/network filters where supported and may not include every licensed title in a franchise.
+
+**Regions:** Netflix, Apple TV+, Prime Video, HBO Max and Disney+ default to `FI`; Hulu and Paramount+ default to `US`; BritBox to `GB`. These are search-availability regions, not guarantees of Finnish subscriptions. You can override each with `PLATFORM_REGION_*` variables. All rows limit results to a matched subscription provider—never fallback to unrelated genres.
+
+**Collections:** The combined Xperience JSON represents **folders containing catalog sources**. Depending on your Nuvio collection display mode, these sources can render as a merged folder or as rows/tabs. Importing a collection JSON *does not automatically create Home rows*; import the manifests first.
+
+## Research examples / basis for observed English headings
+
+- Netflix observed `Only on Netflix`, `Trending Now`, `New Releases`, `Popular on Netflix`: https://www.tomsguide.com/news/hbo-max-is-better-than-netflix-in-one-big-way and https://newsatw.com/netflix-review-our-top-choice-in-a-crowded-market/
+- Apple TV's Finnish English page observes `Top 10 TV Shows`, `Top 10 Movies`, `New Releases`, `Browse All Apple Originals`, `Great Movies Now on Apple TV`: https://tv.apple.com/fi
+- Prime Video's public TV page observes `Popular TV`, `Featured Originals and Exclusives`, `Explore: Latest TV`, `Drama TV`, `Popular with subscriptions`: https://www.primevideo.com/tv
+- HBO Max/Max reports `Just Added`, `Awards & Acclaim`, `Trending Now`, `Become an Armchair Detective`, `Drama! Drama! Drama!`: https://www.yahoo.com/entertainment/different-max-hbo-max-210000703.html
+- Disney+ observed `New to Disney+`, `Trending` and brand hubs: https://www.afb.org/aw/22/4/17490
+- Hulu's actual `Newly Added TV`, `Newly Added Hulu Originals` pages: https://www.hulu.com/hub/newly_added_movies_tv and https://www.hulu.com/hub/newly_added_movies_tv/collections/1420
+- BritBox reports `Recently Added`, `Most Recommended`, `Best of ITV`, `Drama`, `Comedy`, `True Stories`: https://www.cordbusters.co.uk/britbox-uk-review/
+- Paramount+ reports `Trending Now`, `Paramount+ Originals`, `Hit Movies` and network brand hubs: https://theexplorevenango.com/paramount-on-roku-a-comprehensive-exploration/ and https://www.galaxus.ch/en/page/paramount-review-why-im-not-willing-to-pay-so-much-for-so-little-25836
+
+These sources establish wording observed on particular devices/markets/times; they do **not** validate every row as a live current category for every account.
+
+## Local test
+
+In `tmdb_addon/`, run `npm test`. Tests use mocked TMDB responses and do not validate real provider titles or live Xperience import.

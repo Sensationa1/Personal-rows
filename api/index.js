@@ -59,20 +59,37 @@ async function providerIds(service,type){
    return [...conf.fallback];
  });
 }
-function createManifest(){
+function createManifest(service=null){
+ const selected=service?DATA.rows.filter(row=>row.service===service):DATA.rows;
+ const slug=service?DATA.serviceSlugs[service]:null;
  return {
-  id:DATA.id,version:DATA.version,name:DATA.name,description:DATA.description,
+  id:service?`${DATA.id}.${slug.replace(/-/g,'_')}`:DATA.id,
+  version:DATA.version,
+  name:service?`${service} — Home Rows`:DATA.name,
+  description:service?`${service} home-style English row names, using TMDB discovery data`:DATA.description,
   resources:['catalog'],types:['movie','series'],idPrefixes:['tmdb:'],
-  catalogs:DATA.rows.map(row=>({type:row.type,id:row.id,name:row.name,extra:[{name:'skip',isRequired:false}]})),
+  catalogs:selected.map(row=>({type:row.type,id:row.id,name:row.name,extra:[{name:'skip',isRequired:false}]})),
   behaviorHints:{configurable:false,configurationRequired:false}
  };
 }
 function chooseFilters(row){
  const q={};
- if(row.filter==='genre')q.with_genres=row.value;
- if(row.filter==='language')q.with_original_language=row.value;
- if(row.filter==='toprated' || row.filter==='toprated_genre') {q['vote_count.gte']='80';q.sort_by='vote_average.desc';}
- if(row.filter==='toprated_genre')q.with_genres=row.value;
+ switch(row.filter){
+  case 'genre': q.with_genres=row.value; break;
+  case 'network': case 'networknew': q.with_networks=row.value;break;
+  case 'studio':q.with_companies=row.value;break;
+  case 'international':q.without_original_language='en';break;
+  case 'toprated':q['vote_count.gte']='80';q.sort_by='vote_average.desc';break;
+  case 'topten':q['vote_count.gte']='20';break;
+ }
+ if(row.filter==='trending'){
+  const d=new Date();d.setUTCFullYear(d.getUTCFullYear()-3);
+  q[ row.type==='series' ? 'first_air_date.gte' : 'primary_release_date.gte' ]=d.toISOString().slice(0,10);
+ }
+ if(['new','networknew'].includes(row.filter)){
+  q.sort_by=row.type==='series'?'first_air_date.desc':'primary_release_date.desc';
+  q['vote_count.gte']='1';
+ }
  return q;
 }
 function mapMeta(item,type){
@@ -90,18 +107,19 @@ function mapMeta(item,type){
  };
 }
 async function buildCatalog(row,skip){
- const region=regionFor(row.service),provider=await providerIds(row.service,row.type),isTv=row.type==='series';
+ const region=regionFor(row.service),providers=await providerIds(row.service,row.type),isTv=row.type==='series';
  const page=Math.floor(skip/20)+1;
- if(!provider.length || page>500)return {metas:[]};
+ if(!providers.length || page>500 || (row.filter==='topten' && skip>=10))return {metas:[]};
  const q={language:process.env.TMDB_LANGUAGE||'en-US',include_adult:'false',page,
-   with_watch_providers:provider.join('|'),watch_region:region,with_watch_monetization_types:'flatrate',
+   with_watch_providers:providers.join('|'),watch_region:region,with_watch_monetization_types:'flatrate',
    sort_by:'popularity.desc', ...chooseFilters(row)};
  const today=new Date().toISOString().slice(0,10);
- if(isTv) q['first_air_date.lte']=today;
+ if(isTv)q['first_air_date.lte']=today;
  else q['primary_release_date.lte']=today;
  const result=await tmdb(`discover/${isTv?'tv':'movie'}`,q);
  const metas=(result.results||[]).filter(r=>r.poster_path).map(r=>mapMeta(r,row.type)).filter(Boolean);
- return {metas:metas.slice(skip%20)};
+ const limit=row.filter==='topten'?10:20;
+ return {metas:metas.slice(skip%20,limit)};
 }
 async function handler(req,res){
  if(req.method==='OPTIONS'){res.statusCode=204;res.setHeader('Access-Control-Allow-Origin','*');res.end();return;}
@@ -113,11 +131,16 @@ async function handler(req,res){
  }
  if(path==='/' || path==='/health')return json(res,200,{status:'ok',catalogs:DATA.rows.length,configured:Boolean(process.env.TMDB_API_KEY||process.env.TMDB_READ_ACCESS_TOKEN)});
  if(path==='/manifest.json')return json(res,200,createManifest());
- const match=path.match(/^\/catalog\/(movie|series)\/([a-z0-9_]+)(?:\/skip=(\d+))?\.json$/i);
+ const serviceManifest=path.match(/^\/([a-z0-9-]+)\/manifest\.json$/i);
+ if(serviceManifest){const service=Object.keys(DATA.serviceSlugs).find(s=>DATA.serviceSlugs[s]===serviceManifest[1]);
+   if(!service)return json(res,404,{error:'Unknown streaming platform'});
+   return json(res,200,createManifest(service));
+ }
+ const match=path.match(/^\/(?:([a-z0-9-]+)\/)?catalog\/(movie|series)\/([a-z0-9_]+)(?:\/skip=(\d+))?\.json$/i);
  if(!match)return json(res,404,{error:'Not found'});
- const type=match[1],row=catalogById.get(match[2]);
- if(!row || row.type!==type)return json(res,404,{error:'Unknown catalog'});
- const skipRaw=Number(match[3]||url.searchParams.get('skip')||0);
+ const slug=match[1]||null,type=match[2],row=catalogById.get(match[3]);
+ if(!row || row.type!==type || (slug && DATA.serviceSlugs[row.service]!==slug))return json(res,404,{error:'Unknown catalog'});
+ const skipRaw=Number(match[4]||url.searchParams.get('skip')||0);
  if(!Number.isInteger(skipRaw)||skipRaw<0||skipRaw>10000)return json(res,400,{error:'Invalid skip'});
  try{
   apiAuth();
